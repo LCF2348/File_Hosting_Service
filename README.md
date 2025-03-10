@@ -1,5 +1,5 @@
 # File Hosting Service
-**Follow the below steps to begin collaborating on our project (Assuming you're on Windows 11):**
+**Steps to Start Working on the Project (Assuming You're on Windows 11):**
 
 1. Choose a folder on your computer to place your project in, right click inside it and click "Open in Terminal".
    
@@ -19,3 +19,10 @@
    ```
    pip install Flask
 Note that steps 3-5 are needed because our repo doesn't hold our virtual environment or Flask installation.
+
+**To Run the Project**
+1. Navigate inside of the project folder, open a terminal and use the following command:
+   ```bash
+   flask --app hello run
+
+2. Navigate to http://127.0.0.1:5000 in any web browser. Ctrl+C to quit.
