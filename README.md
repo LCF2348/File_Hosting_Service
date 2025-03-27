@@ -18,11 +18,27 @@
 5. Install Flask using pip:
    ```
    pip install Flask
-Note that steps 3-5 are needed because our repo doesn't hold our virtual environment or Flask installation.
+6. Install SQLAlchemy using pip:
+   ```
+   pip install flask-sqlalchemy
+Note that steps 3-6 are needed because our repo doesn't hold our virtual environment or Flask installation.
 
-**To Run the Project**
-1. Navigate inside of the project folder, open a terminal and use the following command:
-   ```bash
-   flask --app hello run
-
-2. Navigate to http://127.0.0.1:5000 in any web browser. Ctrl+C to quit.
+**Setting Up the Local Database to Talk to the Cloud:**
+1. Navigate to the SQLite3 downloads page: https://www.sqlite.org/download.html
+2. Underneath "Precompiled Binaries for Windows", download "sqlite-tools-win-x64-3490100.zip".
+3. Extract the folder to your desired location (Documents, Desktop, etc.)
+4. While still inside the folder, copy its location from the Windows Explorer address bar.
+5. Press the Windows Key, and search for "Edit the system environemnt variables".
+6. Clicking "Environment Variables", select the "Path" variable and click "Edit..."
+7. Click "New", and paste the location of SQLite3 you exported earlier, and hit "OK".
+8. In the project folder, open a terminal and entering the following commands, one at a time:
+   ```
+   flask shell
+   db.create_all()
+   exit()
+9. Verify the database was created using the following commands, one at a time:
+   ```
+   sqlite3 instance/db.sqlite3
+   .tables
+   .schema
+10. Run the project using "flask run" in a terminal.
