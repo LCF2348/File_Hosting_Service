@@ -1,0 +1,114 @@
+/* styles.css */
+
+/* Set base styles */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #343434;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling the header */
+h1 {
+    text-align: center;
+    padding: 20px;
+    background-color: #7f00da;
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+/* Form styles */
+form {
+    margin: 20px auto;
+    width: 60%;
+    padding: 20px;
+    background-color: #212121;
+    border-radius: 8px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: white;
+}
+
+input[type="file"] {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 1rem;
+    color: #580097; 
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #de00b9;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #f51fd1;
+}
+
+/* File list section */
+.file-list {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.file-list h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.file-item {
+    background-color: #444444;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.file-item a {
+    color: #6000a5;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+.file-item a:hover {
+    color: white; 
+}
+
+/* Placeholder for no files uploaded */
+p {
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    form {
+        width: 90%;
+    }
+    
+    .file-list {
+        margin: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    button {
+        width: 100%;
+    }
+}
