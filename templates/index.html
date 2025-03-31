@@ -1,0 +1,35 @@
+<!--index.html-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload to S3</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Upload a File to S3</h1>
+
+    <form action="/" method="POST" enctype="multipart/form-data">
+        <label for="file-to-save">Choose a file to upload:</label>
+        <input type="file" id="file-to-save" name="file-to-save" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    <div class="file-list">
+        <h2>Uploaded Files</h2>
+        <ul>
+            {% for file in files %}
+                <li class="file-item">
+                    <a href="https://{{ file.bucket }}.s3.amazonaws.com/{{ file.filename }}" target="_blank">
+                        {{ file.original_filename }}
+                    </a>
+                </li>
+            {% else %}
+                <p>No files uploaded yet.</p>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
