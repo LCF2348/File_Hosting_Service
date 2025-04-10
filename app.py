@@ -2,11 +2,12 @@ import boto3
 import uuid
 from flask import Flask, redirect, url_for, request, render_template
 from flask_sqlalchemy import SQLAlchemy
-
+from dotenv import load_dotenv
+import os
 db = SQLAlchemy()
 
 # Limit the file types that can be uploaded to S3.
-ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png'}
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg'}
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
@@ -21,6 +22,7 @@ class File(db.Model):
     region = db.Column(db.String(100))
 
 def create_app():
+    load_dotenv()
     app = Flask(__name__)
 
     # Configures the database
@@ -41,8 +43,15 @@ def create_app():
             new_filename = uuid.uuid4().hex + '.' + uploaded_file.filename.rsplit('.',1)[1].lower()
 
             # Create the S3 variable that lets us interact with S3.
-            bucket_name = "flasks3example"
-            s3 = boto3.resource("s3")
+            bucket_name = os.getenv("AWS_BUCKET_NAME")
+            region = os.getenv("AWS_REGION")
+
+            s3 = boto3.resource(
+                "s3",
+                region_name=region,
+                aws_access_key_id=os.getenv("AWS_ACCESS_KEY_ID"),
+                aws_secret_access_key=os.getenv("AWS_SECRET_ACCESS_KEY")
+            )
 
             # TODO: Allow boto3 to locate credentials (to resolve NoCredentialsError), and then save to local database.
 
