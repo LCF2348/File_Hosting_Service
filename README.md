@@ -1,8 +1,7 @@
 # File Hosting Service
-**Steps to Start Working on the Project (Assuming You're on Windows 11):**
+**Setup (Assuming You're on Windows 11):**
 
 1. Choose a folder on your computer to place your project in, right click inside it and click "Open in Terminal".
-   
 2. Clone the repo and navigate into your new folder using the following commands in your terminal:
    ```bash
    git clone https://github.com/LCF2348/File_Hosting_Service.git
@@ -21,7 +20,6 @@
 6. Install SQLAlchemy using pip:
    ```
    pip install flask-sqlalchemy
-Note that steps 3-6 are needed because our repo doesn't hold our virtual environment or Flask installation.
 
 **Setting Up the Local Database to Talk to the Cloud:**
 1. Navigate to the SQLite3 downloads page: https://www.sqlite.org/download.html
