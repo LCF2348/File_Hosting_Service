@@ -28,7 +28,7 @@ Note that steps 3-6 are needed because our repo doesn't hold our virtual environ
 2. Underneath "Precompiled Binaries for Windows", download "sqlite-tools-win-x64-3490100.zip".
 3. Extract the folder to your desired location (Documents, Desktop, etc.)
 4. While still inside the folder, copy its location from the Windows Explorer address bar.
-5. Press the Windows Key, and search for "Edit the system environemnt variables".
+5. Press the Windows Key, and search for "Edit the system environment variables".
 6. Clicking "Environment Variables", select the "Path" variable and click "Edit..."
 7. Click "New", and paste the location of SQLite3 you exported earlier, and hit "OK".
 8. In the project folder, open a terminal and entering the following commands, one at a time:
@@ -41,4 +41,4 @@ Note that steps 3-6 are needed because our repo doesn't hold our virtual environ
    sqlite3 instance/db.sqlite3
    .tables
    .schema
-10. Run the project using "flask run" in a terminal.
+10. Run the project using "flask --app app run" in a terminal.

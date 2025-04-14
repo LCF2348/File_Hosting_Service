@@ -53,9 +53,13 @@ def create_app():
                 aws_secret_access_key=os.getenv("AWS_SECRET_ACCESS_KEY")
             )
 
-            # TODO: Allow boto3 to locate credentials (to resolve NoCredentialsError), and then save to local database.
-
             s3.Bucket(bucket_name).upload_fileobj(uploaded_file, new_filename)
+
+            # Save a reference to the cloud file in our local database.
+            file = File(original_filename=uploaded_file.filename, filename=new_filename,
+                        bucket=bucket_name, region=region)
+            db.session.add(file)
+            db.session.commit()
 
             return redirect(url_for("index"))
 
