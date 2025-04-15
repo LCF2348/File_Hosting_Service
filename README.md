@@ -39,4 +39,7 @@
    sqlite3 instance/db.sqlite3
    .tables
    .schema
-10. Run the project using "flask --app app run" in a terminal.
+
+**Running the Project:**
+1. Place the provided .env file inside the project directory.
+2. Run the project using "flask --app app run" in a terminal.
