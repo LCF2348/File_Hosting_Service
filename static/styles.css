@@ -5,96 +5,148 @@
     box-sizing: border-box;
 }
 
+/* Body Styling */
 body {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    background-color: lightgray;
+    font-family: 'Poppins', sans-serif;
+    background-color: LightGray;
     color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 100vh;
-}
-
-h3 {
-    color: darkblue;
-    margin-bottom: 30px;
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-/* Style form */
-form {
-    background-color: white;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styling */
+h3 {
+    color: DarkBlue;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: 600;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styling */
+form {
+    background-color: White;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 30px;
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards 0.3s;
 }
 
-/* Input style */
+/* Input Styling */
 input[type="file"] {
-    padding: 10px;
-    margin: 10px 0;
-    border: 2px solid darkblue;
-    border-radius: 5px;
+    padding: 12px;
+    margin: 15px 0;
+    border: 2px solid DarkBlue;
+    border-radius: 6px;
     font-size: 1rem;
+    background-color: #F1F1F1;
+    width: 100%;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
+input[type="file"]:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-color: MidnightBlue;
+}
+
+/* Button Styling */
 button {
-    padding: 10px 20px;
-    background-color: darkblue;
-    color: white;
+    padding: 12px 25px;
+    background-color: DarkBlue;
+    color: White;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    margin-top: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
-    background-color: midnightblue;
+    background-color: #003366;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Display files with styling */
+/* Display File Styling */
 div {
-    background-color: white;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    background-color: White;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     font-size: 1rem;
-    color: darkblue;
+    color: DarkBlue;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards 0.5s;
 }
 
+/* Link Styling */
 a {
-    color: darkblue;
+    color: DarkBlue;
     text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 a:hover {
     text-decoration: underline;
+    color: #003366;
 }
 
-/* Media query for responsiveness */
+/* Media Query for Responsiveness */
 @media (max-width: 600px) {
     body {
-        padding: 20px;
+        padding: 10px;
     }
 
     form {
         width: 100%;
+        padding: 20px;
     }
-}
+
+    input[type="file"] {
+        width: 100%;
+    }
 
     button {
         width: 100%;
+    }
+}
+
+/* Keyframes for Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
